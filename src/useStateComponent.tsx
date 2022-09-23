@@ -14,7 +14,7 @@ function UseStateComponent(){
                 {JSON.stringify(arr)}
             </div>
             <div>
-                <button onClick={() => nameSet("keon")}>
+                <button onClick={() => nameSet("Keon")}>
                     Set Name</button>
                 {JSON.stringify(name)}
             </div>
