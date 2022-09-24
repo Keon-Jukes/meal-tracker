@@ -2,7 +2,7 @@ import UseStateComponent from "./useStateComponent";
 import UseEffectComponent from "./UseEffectComponent";
 import UseContextComponent from "./UseContextComponent";
 import UseReducerComponent from "./UseReducerComponent";
-
+import UseRefComponent from "./UseRefComponent";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
       <h1>UseReducer</h1>
       <UseReducerComponent />
       <h1>UseRef</h1>
+      <UseRefComponent />
     </div>
   );
 }
