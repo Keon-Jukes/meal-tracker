@@ -15,14 +15,18 @@ export interface Beverage {
   }
 
 
-function useFetchData(url: string){
-    const [data, dataSet] = useState<string | null>(null);
-    const [done, doneSet] = useState<boolean | null>(false);
+function useFetchData<Payload>(url: string) :
+ {   
+    data: Payload | null;
+    done: Boolean;}
+    {
+    const [data, dataSet] = useState<Payload | null>(null);
+    const [done, doneSet] = useState(false);
 
     useEffect(() => {
         fetch(url)
         .then((resp)=> resp.json())
-        .then((d) => {
+        .then((d: Payload) => {
             dataSet(d);
             doneSet(true);
         });
@@ -30,7 +34,7 @@ function useFetchData(url: string){
 
     return {
         data,
-        done
+        done,
     }
 }
 
@@ -39,9 +43,15 @@ function useFetchData(url: string){
 
 
 function CustomHookComponent() {
+    const {data, done} = useFetchData<Beverage[]>("/hv-taplist.json");
     return (
         <div>
-
+    {done && (
+    <img
+        src={data![0].logo}
+        alt="Beverage Logo" 
+        />
+)}
         </div>
     )
 }
