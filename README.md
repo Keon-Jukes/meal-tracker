@@ -1,6 +1,6 @@
 # Meal Tracker App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made to keep track of my skills
 
 ## Available Scripts
 
